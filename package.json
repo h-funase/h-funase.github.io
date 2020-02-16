@@ -6,7 +6,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server",
+    "server": "hexo server"
   },
   "hexo": {
     "version": "4.2.0"
@@ -22,27 +22,5 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0"
-  },
-
-
-
-
-
-  
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ],
-          "plugins": [
-            "syntax-async-functions",
-            "transform-regenerator"
-          ]
-        }
-      ]
-    ]
   }
 }
