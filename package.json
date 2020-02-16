@@ -22,5 +22,34 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0"
+  },
+
+
+
+
+
+  "scripts": {
+    "start": "budo main.js:dist/bundle.js --live --host localhost",
+    "watch": "watchify main.js -v --debug -o dist/bundle.js",
+    "prep": "yarn && mkdirp dist",
+    "build": "browserify main.js -o dist/bundle.js",
+    "lint": "eslint main.js --fix",
+    "deploy": "yarn build && uglifyjs dist/bundle.js -c -m -o dist/bundle.min.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ],
+          "plugins": [
+            "syntax-async-functions",
+            "transform-regenerator"
+          ]
+        }
+      ]
+    ]
   }
 }
