@@ -7,13 +7,6 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-
-
-    "start": "budo main.js:dist/bundle.js --live --host localhost",
-    "watch": "watchify main.js -v --debug -o dist/bundle.js",
-    "prep": "yarn && mkdirp dist",
-    "lint": "eslint main.js --fix",
-    // "deploy": "yarn build && uglifyjs dist/bundle.js -c -m -o dist/bundle.min.js"
   },
   "hexo": {
     "version": "4.2.0"
