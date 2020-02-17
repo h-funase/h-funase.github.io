@@ -1,26 +1,46 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo server"
-  },
-  "hexo": {
-    "version": "4.2.0"
-  },
+  "name": "",
+  "version": "1.0.0",
+  "author": "",
   "dependencies": {
-    "hexo": "^4.2.0",
-    "hexo-deployer-git": "^2.1.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-index": "^1.0.0",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^2.0.0",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^1.0.0"
+    "@tensorflow/tfjs": "~1.0.0",
+    "babel-polyfill": "~6.26.0",
+    "gamma": "^1.0.0"
+  },
+  "scripts": {
+    "start": "budo main.js:dist/bundle.js --live --host localhost",
+    "watch": "watchify main.js -v --debug -o dist/bundle.js",
+    "prep": "yarn && mkdir -p dist",
+    "build": "browserify main.js -o dist/bundle.js",
+    "lint": "eslint main.js --fix",
+    "deploy": "yarn build && uglifyjs dist/bundle.js -c -m -o dist/bundle.min.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ],
+          "plugins": [
+            "syntax-async-functions",
+            "transform-regenerator"
+          ]
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-syntax-async-functions": "~6.13.0",
+    "babel-plugin-transform-regenerator": "~6.26.0",
+    "babel-preset-es2015": "~6.24.1",
+    "babelify": "^7.3.0",
+    "budo": "^10.0.4",
+    "eslint": "~4.11.0",
+    "eslint-config-google": "~0.9.1",
+    "mkdirp": "~0.5.1",
+    "uglify-js": "^3.3.17"
   }
 }
