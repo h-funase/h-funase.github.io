@@ -335,7 +335,7 @@ class Main {
     this.combineButton.disabled = false;
     this.modelSelectStyle.disabled = false;
     this.modelSelectTransformer.disabled = false;
-    this.styleButton.textContent = 'Stylize';
+    this.styleButton.textContent = '合成する！';
     this.combineButton.textContent = 'Combine Styles';
   }
 
