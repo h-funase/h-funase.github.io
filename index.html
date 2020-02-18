@@ -73,15 +73,14 @@ limitations under the License.
           <div class="col mx-5 my-4">
               <img id="content-img" class="centered" src="images/chicago.jpg" height=256></img>
               <br>
-              <label for="content-img-size">元画像イメージサイズ</label>
+              <label for="content-img-size">元画像サイズ</label>
               <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" 
               title="A bigger content image results in a more detailed output, but increases the processing time significantly."></i>
               <input type="range" min="256" max="400" value="256" class="custom-range centered" id="content-img-size" >
               <br>
               <select id="content-select" class="centered custom-select">
-                <option value="" disabled>Select content</option>
-                <option value="pic">Take a picture</option>
-                <option value="file">Select from file</option>
+                <option value="" disabled>元画像を選択する</option>
+                <option value="file">画像をアップロードする</option>
                 <option value="stata">stata</option>
                 <option value="diana">diana</option>
                 <option value="golden_gate">golden_gate</option>
@@ -102,8 +101,8 @@ limitations under the License.
               <input type="range" min="100" max="400" value="256" class="custom-range centered" id="style-img-size">
               <br>
               <select id="style-select" class="centered custom-select">
-                <option value="" disabled>Select a style</option>
-                <option value="file">Select from file</option>
+                <option value="" disabled>合成する画像を選択する</option>
+                <option value="file">画像をアップロードする</option>
                 <option value="random">Random image from wikiart.org</option>
                 <option value="udnie">udnie</option>
                 <option value="stripes">stripes</option>
@@ -121,7 +120,7 @@ limitations under the License.
           <div class="col-md-6 offset-md-3">
             <canvas id="stylized" class="centered"></canvas>
             <br>
-            <label for="stylized-img-ratio">Stylization strength</label>
+            <label for="stylized-img-ratio">合成の強度</label>
             <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" 
             title="This parameter affects the stylization strength. The further to the right, the stronger the stylization. This is done via interpolation between the style vectors of the content and style images."></i>
             <input type="range" min="0" max="100" value="100" class="custom-range centered" id="stylized-img-ratio">
@@ -206,8 +205,7 @@ limitations under the License.
             <input type="range" min="256" max="400" value="256" class="custom-range centered" id="c-content-img-size">
             <br>
             <select id="c-content-select" class="centered custom-select">
-              <option value="" disabled>Select content</option>
-              <option value="pic">Take a picture</option>
+              <option value="" disabled>画像を選ぶ</option>
               <option value="file">Select from file</option>
               <option value="stata">stata</option>
               <option value="diana">diana</option>
@@ -265,7 +263,6 @@ limitations under the License.
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Take a snapshot!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
