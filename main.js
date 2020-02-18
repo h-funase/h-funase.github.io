@@ -368,7 +368,7 @@ class Main {
       styleBottleneck.dispose();
       identityBottleneck.dispose();
     }
-    this.styleButton.textContent = 'Stylizing image...';
+    this.styleButton.textContent = '合成中...';
     await tf.nextFrame();
     const stylized = await tf.tidy(() => {
       return this.transformNet.predict([tf.browser.fromPixels(this.contentImg).toFloat().div(tf.scalar(255)).expandDims(), bottleneck]).squeeze();
@@ -392,7 +392,7 @@ class Main {
       return this.styleNet.predict(tf.browser.fromPixels(this.combStyleImg2).toFloat().div(tf.scalar(255)).expandDims());
     });
 
-    this.combineButton.textContent = 'Stylizing image...';
+    this.combineButton.textContent = '合成中...';
     await tf.nextFrame();
     const combinedBottleneck = await tf.tidy(() => {
       const scaledBottleneck1 = bottleneck1.mul(tf.scalar(1-this.combStyleRatio));
