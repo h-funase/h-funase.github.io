@@ -551,7 +551,7 @@ var Main = function () {
               identityBottleneck.dispose();
 
             case 21:
-              this.styleButton.textContent = 'Stylizing image...';
+              this.styleButton.textContent = '合成中...';
               _context5.next = 24;
               return regeneratorRuntime.awrap(tf.nextFrame());
 
@@ -619,7 +619,7 @@ var Main = function () {
               bottleneck2 = _context6.sent;
 
 
-              this.combineButton.textContent = 'Stylizing image...';
+              this.combineButton.textContent = '合成中...';
               _context6.next = 17;
               return regeneratorRuntime.awrap(tf.nextFrame());
 
